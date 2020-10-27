@@ -1,6 +1,8 @@
 package di.example.sfdi;
 
 import di.example.sfdi.controllers.*;
+import di.example.sfdi.examplebean.FakeDatasource;
+import di.example.sfdi.examplebean.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -23,23 +25,18 @@ public class SfDiApplication {
 
 		System.out.println(myController.sayHello());
 
-		System.out.println("--------- property");
+		FakeDatasource  fakeDatasource =(FakeDatasource) ctx.getBean(FakeDatasource.class);
 
-		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
+		System.out.println(fakeDatasource.getUser());
+		System.out.println(fakeDatasource.getPassword());
+		System.out.println(fakeDatasource.getUrl());
 
-		System.out.println(propertyInjectedController.getGreeting());
 
-		System.out.println("--------- setter");
+		FakeJmsBroker fakeJmsBroker =(FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
 
-		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
-
-		System.out.println(setterInjectedController.getGreeting());
-
-		System.out.println("--------- Constructor");
-
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-
-		System.out.println(constructorInjectedController.getGreeting());
+		System.out.println(fakeJmsBroker.getUsername());
+		System.out.println(fakeJmsBroker.getPassword());
+		System.out.println(fakeJmsBroker.getUrl());
 	}
 
 }

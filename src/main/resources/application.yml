@@ -1,0 +1,19 @@
+curso:
+  jms:
+    username: jmsuseryml
+    password: jmspassyml
+    url: jmsurlyml
+
+---
+spring:
+  profiles: EN
+curso:
+  jms:
+    username: jmsuseryml_en
+
+---
+spring:
+  profiles: ES
+curso:
+  jms:
+    password: jmspassyml_ES

@@ -1,0 +1,35 @@
+#this is a comment
+name: pp
+
+names:
+  - pp
+  - pp1
+  - pp2
+
+pound_sign: "#"
+
+book:
+  author: author
+  publisher: pub
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #No, false, FALSE
+
+string_val: "this is a ' quote"
+
+colon_string: "yml does not like : colons"
+
+include_new_lines: |
+  linea1
+  linea2
+  linea3
+
+ignoring_new_lines: >
+  linea1
+  linea2
+  linea3
